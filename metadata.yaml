@@ -1,0 +1,9 @@
+homepage: "https://sportradar.com"
+documentation: "https://github.com/ads-marketing-cloud/ct-sportradar-login-event"
+versions:
+ # Latest version
+ - sha: 4f9805870fdb06439066252e277129a54c47b66e
+   changeNotes: Create initial template.
+ # Older versions
+ - sha: 2b64d96a5272fc61bde72d8c837868ea74773324
+   changeNotes: Create repository.
