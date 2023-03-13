@@ -182,6 +182,27 @@ scenarios:
 
     assertApi('gtmOnFailure').wasNotCalled();
     assertApi('gtmOnSuccess').wasCalled();
+- name: Should push event with correct values
+  code: |-
+    const setInWindow = require('setInWindow');
+    const mockData = {
+      userId: 33,
+    };
+    setInWindow('srtmCommands', [], true);
+
+    runCode(mockData);
+
+    const copyFromWindow = require('copyFromWindow');
+    const srtmCommands = copyFromWindow('srtmCommands');
+    assertThat(srtmCommands).isEqualTo([
+      {
+      event: "track.user.login",
+      payload: {
+        action: "complete",
+        userId: mockData.userId,
+      },
+    }
+    ]);
 
 
 ___NOTES___
